@@ -4,8 +4,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import type { FormValues } from "../types/formTypes";
 
 const Form = () => {
-  const { times, months, initialFormValues, onValueSubmit, scheduleData } =
-    useAppContext();
+  const { times, months, initialFormValues, onValueSubmit } = useAppContext();
 
   const { register, handleSubmit } = useForm<FormValues>({
     defaultValues: initialFormValues,

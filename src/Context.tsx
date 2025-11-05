@@ -6,10 +6,8 @@ import {
   generateSchedule,
   getMonthName,
   memberShuffle,
-  toMinute,
   zoneShuffle,
 } from "./helper";
-import html2pdf from "html2pdf.js";
 import { useReactToPrint } from "react-to-print";
 import html2canvas from "html2canvas";
 
@@ -145,7 +143,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     const zoneName = (z: string) => (z === "A" ? "A කලාපය" : "B කලාපය");
 
     const result = Object.entries(grouped)
-      .sort(([a, itemsA], [b, itemsB]) => {
+      .sort(([, itemsA], [, itemsB]) => {
         const firstA = new Date(`1970-01-01T${itemsA[0].start}:00`);
         const firstB = new Date(`1970-01-01T${itemsB[0].start}:00`);
         return firstA.getTime() - firstB.getTime();
