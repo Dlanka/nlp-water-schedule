@@ -1,4 +1,3 @@
-import React from "react";
 import { Download, Printer } from "lucide-react";
 import Document from "./document";
 import Table from "./Table";
@@ -6,7 +5,7 @@ import { useAppContext } from "../Context";
 import { getMonthName, getMonthRange } from "../helper";
 
 const PDFDocument = () => {
-  const { selectedDate, onHtmlToPDF, handleCapture } = useAppContext();
+  const { selectedDate, handlePrint, handleCapture } = useAppContext();
 
   console.log(selectedDate);
 
@@ -26,7 +25,7 @@ const PDFDocument = () => {
 
       <div className="absolute z-50 top-0 -right-12 flex flex-col print:hidden gap-2">
         <button
-          onClick={onHtmlToPDF}
+          onClick={handlePrint}
           title="Save as a PDF"
           className="size-10 text-blue-700 bg-neutral-200 hover:bg-neutral-300 flex items-center justify-center rounded-md cursor-pointer"
         >

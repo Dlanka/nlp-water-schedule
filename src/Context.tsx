@@ -29,7 +29,7 @@ interface State {
   initialFormValues?: FormValues;
   onValueSubmit?: (values: FormValues) => void;
   onGenerateSchedule?: () => void;
-  onHtmlToPDF?: () => void;
+  handlePrint?: () => void;
   handleCapture?: () => void;
 }
 
@@ -174,7 +174,7 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     contentRef,
     onValueSubmit,
     onGenerateSchedule,
-    onHtmlToPDF: handlePrint,
+    handlePrint,
     handleCapture,
   };
 
